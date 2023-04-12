@@ -47,7 +47,7 @@
 }
 
 #mParamsLine,#pParamsLine, #kParamLine, #nParamLine, #bernuliParamsLine, #integralParamsLine, #bernuliAnswerLine, #polynomAnswerLine,  #integralAnswerLine, #nNumberLine, #probabilityLine, #rangeLine{
-	background-color: #152742;
+	background-color: #094399;
 	border: 1px;
 	border-radius: 9px;
 }
