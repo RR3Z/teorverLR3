@@ -5,11 +5,11 @@ from scipy import integrate
 from math import cos, pi
 import numpy as np
 
-class formulaType(Enum):
-    EQUALITY = 1
-    LOWER = 2
-    HIGHEREQUAL = 3
-    INTERVAL = 4
+class FormulaType(Enum):
+    EQUALITY = 0
+    LOWER = 1
+    HIGHEREQUAL = 2
+    INTERVAL = 3
 
 
 def sochetNoRepeat(n : int, k : int):
@@ -21,16 +21,16 @@ def perestanovRepeat(n : int, m : list):
         res = res // math.factorial(int(m[currentM]))
     return res
 
-def bernulli(p : float, n : int, m1 : int, m2 : int, type : formulaType):
+def bernulli(p : float, n : int, m1 : int, m2 : int, type : FormulaType):
     # Сделай switch case с выбором всех возможных type для формулы Бернулли
-    if type == formulaType.EQUALITY:
+    if type == FormulaType.EQUALITY:
         return sochetNoRepeat(n, m1) * (p ** m1) * ((1 - p) ** (n - m1))
-    elif type == formulaType.LOWER:
+    elif type == FormulaType.LOWER:
         return sum([sochetNoRepeat(n, i) * (p ** i) * ((1 - p) ** (n - i)) for i in range(0, m1)])
-    elif type == formulaType.HIGHEREQUAL:
+    elif type == FormulaType.HIGHEREQUAL:
         return sum([sochetNoRepeat(n, i) * (p ** i) * ((1 - p) ** (n - i)) for i in range(m1, n)])
-    elif type == formulaType.INTERVAL:
-        return bernulli(p, n, m1, m2, formulaType.HIGHEREQUAL) - bernulli(p, n, m2 + 1, 0, formulaType.HIGHEREQUAL)
+    elif type == FormulaType.INTERVAL:
+        return bernulli(p, n, m1, m2, FormulaType.HIGHEREQUAL) - bernulli(p, n, m2 + 1, 0, FormulaType.HIGHEREQUAL)
     
     
 #Напиши программу, которя позволяет вычислить вероятности событий по полиномиальной формуле Бернулли

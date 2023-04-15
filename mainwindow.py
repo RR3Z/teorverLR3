@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QFrame, QGridLayout,
-    QHBoxLayout, QLabel, QLineEdit, QMainWindow,
-    QPushButton, QSizePolicy, QSpacerItem, QStackedWidget,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
+    QLabel, QLineEdit, QListWidget, QListWidgetItem,
+    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
+    QStackedWidget, QVBoxLayout, QWidget)
 
 
 class Ui_MainWindow(object):
@@ -95,53 +95,26 @@ class Ui_MainWindow(object):
         self.polynomPage.setObjectName(u"polynomPage")
         self.gridLayout_5 = QGridLayout(self.polynomPage)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.kParamLabel = QLabel(self.polynomPage)
-        self.kParamLabel.setObjectName(u"kParamLabel")
-        self.kParamLabel.setAlignment(Qt.AlignCenter)
+        self.verticalLayout_7 = QVBoxLayout()
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.verticalSpacer_5 = QSpacerItem(20, 100, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.horizontalLayout_2.addWidget(self.kParamLabel)
+        self.verticalLayout_7.addItem(self.verticalSpacer_5)
 
-        self.kParamLine = QLineEdit(self.polynomPage)
-        self.kParamLine.setObjectName(u"kParamLine")
+        self.polynomAnswerLabel = QLabel(self.polynomPage)
+        self.polynomAnswerLabel.setObjectName(u"polynomAnswerLabel")
+        self.polynomAnswerLabel.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_2.addWidget(self.kParamLine)
+        self.verticalLayout_7.addWidget(self.polynomAnswerLabel)
 
+        self.polynomAnswerLine = QLineEdit(self.polynomPage)
+        self.polynomAnswerLine.setObjectName(u"polynomAnswerLine")
+        self.polynomAnswerLine.setReadOnly(True)
 
-        self.gridLayout_5.addLayout(self.horizontalLayout_2, 3, 0, 1, 1)
-
-        self.photoPolynomFormula = QLabel(self.polynomPage)
-        self.photoPolynomFormula.setObjectName(u"photoPolynomFormula")
-        self.photoPolynomFormula.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_5.addWidget(self.photoPolynomFormula, 6, 0, 1, 1)
-
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.nParamLabel = QLabel(self.polynomPage)
-        self.nParamLabel.setObjectName(u"nParamLabel")
-        self.nParamLabel.setAlignment(Qt.AlignCenter)
-
-        self.horizontalLayout.addWidget(self.nParamLabel)
-
-        self.nParamLine = QLineEdit(self.polynomPage)
-        self.nParamLine.setObjectName(u"nParamLine")
-
-        self.horizontalLayout.addWidget(self.nParamLine)
+        self.verticalLayout_7.addWidget(self.polynomAnswerLine)
 
 
-        self.gridLayout_5.addLayout(self.horizontalLayout, 2, 0, 1, 1)
-
-        self.calculatePolynomBtn = QPushButton(self.polynomPage)
-        self.calculatePolynomBtn.setObjectName(u"calculatePolynomBtn")
-        self.calculatePolynomBtn.setMinimumSize(QSize(150, 0))
-
-        self.gridLayout_5.addWidget(self.calculatePolynomBtn, 8, 0, 1, 1)
-
-        self.verticalSpacer_6 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Minimum)
-
-        self.gridLayout_5.addItem(self.verticalSpacer_6, 1, 0, 1, 1)
+        self.gridLayout_5.addLayout(self.verticalLayout_7, 7, 0, 1, 1)
 
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
@@ -175,32 +148,59 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addLayout(self.horizontalLayout_4, 5, 0, 1, 1)
 
-        self.verticalLayout_7 = QVBoxLayout()
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.verticalSpacer_5 = QSpacerItem(20, 100, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.nParamLabel = QLabel(self.polynomPage)
+        self.nParamLabel.setObjectName(u"nParamLabel")
+        self.nParamLabel.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_7.addItem(self.verticalSpacer_5)
+        self.horizontalLayout.addWidget(self.nParamLabel)
 
-        self.polynomAnswerLabel = QLabel(self.polynomPage)
-        self.polynomAnswerLabel.setObjectName(u"polynomAnswerLabel")
-        self.polynomAnswerLabel.setAlignment(Qt.AlignCenter)
+        self.nParamLine = QLineEdit(self.polynomPage)
+        self.nParamLine.setObjectName(u"nParamLine")
 
-        self.verticalLayout_7.addWidget(self.polynomAnswerLabel)
-
-        self.polynomAnswerLine = QLineEdit(self.polynomPage)
-        self.polynomAnswerLine.setObjectName(u"polynomAnswerLine")
-        self.polynomAnswerLine.setReadOnly(True)
-
-        self.verticalLayout_7.addWidget(self.polynomAnswerLine)
+        self.horizontalLayout.addWidget(self.nParamLine)
 
 
-        self.gridLayout_5.addLayout(self.verticalLayout_7, 7, 0, 1, 1)
+        self.gridLayout_5.addLayout(self.horizontalLayout, 2, 0, 1, 1)
+
+        self.photoPolynomFormula = QLabel(self.polynomPage)
+        self.photoPolynomFormula.setObjectName(u"photoPolynomFormula")
+        self.photoPolynomFormula.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_5.addWidget(self.photoPolynomFormula, 6, 0, 1, 1)
 
         self.polynomLabel = QLabel(self.polynomPage)
         self.polynomLabel.setObjectName(u"polynomLabel")
         self.polynomLabel.setAlignment(Qt.AlignCenter)
 
         self.gridLayout_5.addWidget(self.polynomLabel, 0, 0, 1, 1)
+
+        self.calculatePolynomBtn = QPushButton(self.polynomPage)
+        self.calculatePolynomBtn.setObjectName(u"calculatePolynomBtn")
+        self.calculatePolynomBtn.setMinimumSize(QSize(150, 0))
+
+        self.gridLayout_5.addWidget(self.calculatePolynomBtn, 8, 0, 1, 1)
+
+        self.verticalSpacer_6 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Minimum)
+
+        self.gridLayout_5.addItem(self.verticalSpacer_6, 1, 0, 1, 1)
+
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.kParamLabel = QLabel(self.polynomPage)
+        self.kParamLabel.setObjectName(u"kParamLabel")
+        self.kParamLabel.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_2.addWidget(self.kParamLabel)
+
+        self.kParamLine = QLineEdit(self.polynomPage)
+        self.kParamLine.setObjectName(u"kParamLine")
+
+        self.horizontalLayout_2.addWidget(self.kParamLine)
+
+
+        self.gridLayout_5.addLayout(self.horizontalLayout_2, 3, 0, 1, 1)
 
         self.mainWidget.addWidget(self.polynomPage)
         self.integralPage = QWidget()
@@ -408,25 +408,14 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.bernuliFirstType = QCheckBox(self.bernuliPage)
-        self.bernuliFirstType.setObjectName(u"bernuliFirstType")
+        self.bernuliFormulaType = QListWidget(self.bernuliPage)
+        QListWidgetItem(self.bernuliFormulaType)
+        QListWidgetItem(self.bernuliFormulaType)
+        QListWidgetItem(self.bernuliFormulaType)
+        QListWidgetItem(self.bernuliFormulaType)
+        self.bernuliFormulaType.setObjectName(u"bernuliFormulaType")
 
-        self.verticalLayout_2.addWidget(self.bernuliFirstType)
-
-        self.bernuliSecondType = QCheckBox(self.bernuliPage)
-        self.bernuliSecondType.setObjectName(u"bernuliSecondType")
-
-        self.verticalLayout_2.addWidget(self.bernuliSecondType)
-
-        self.bernuliThirdType = QCheckBox(self.bernuliPage)
-        self.bernuliThirdType.setObjectName(u"bernuliThirdType")
-
-        self.verticalLayout_2.addWidget(self.bernuliThirdType)
-
-        self.bernuliFourthType = QCheckBox(self.bernuliPage)
-        self.bernuliFourthType.setObjectName(u"bernuliFourthType")
-
-        self.verticalLayout_2.addWidget(self.bernuliFourthType)
+        self.verticalLayout_2.addWidget(self.bernuliFormulaType)
 
 
         self.verticalLayout_3.addLayout(self.verticalLayout_2)
@@ -575,17 +564,17 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0422\u0435\u043e\u0440\u0438\u044f \u0432\u0435\u0440\u043e\u044f\u0442\u043d\u043e\u0441\u0442\u0435\u0439 - \u041b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u043d\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430 \u21163", None))
-        self.kParamLabel.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 k:", None))
-        self.photoPolynomFormula.setText(QCoreApplication.translate("MainWindow", u"photoPolynomFormula", None))
-        self.nParamLabel.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 n:", None))
-        self.calculatePolynomBtn.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0430\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
+        self.polynomAnswerLabel.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442", None))
         self.mParamsLabel.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0435\u0440\u0435\u0447\u0438\u0441\u043b\u0435\u043d\u0438\u0435 m:", None))
         self.pParamsLabel.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0435\u0440\u043e\u044f\u0442\u043d\u043e\u0441\u0442\u0438 p:", None))
-        self.polynomAnswerLabel.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442", None))
+        self.nParamLabel.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 n:", None))
+        self.photoPolynomFormula.setText(QCoreApplication.translate("MainWindow", u"photoPolynomFormula", None))
         self.polynomLabel.setText(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u043b\u043d\u043e\u043c\u0438\u0430\u043b\u044c\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None))
-        self.nNumberLabel.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b-\u0432\u043e \u0438\u0441\u043f\u044b\u0442\u0430\u043d\u0438\u0439 n:", None))
-        self.rangeLabel.setText(QCoreApplication.translate("MainWindow", u"\u0414\u0438\u0430\u043f\u043e\u0437\u043e\u043d (m1, m2):", None))
-        self.probablityLabel.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0435\u0440\u043e\u044f\u0442\u043d\u043e\u0441\u0442\u044c p:", None))
+        self.calculatePolynomBtn.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0430\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
+        self.kParamLabel.setText(QCoreApplication.translate("MainWindow", u"\u0443\u0434\u0430\u043b\u0438\u0442\u044c", None))
+        self.nNumberLabel.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b (p, n, m1, m2)", None))
+        self.rangeLabel.setText(QCoreApplication.translate("MainWindow", u"\u0443\u0434\u0430\u043b\u0438\u0442\u044c", None))
+        self.probablityLabel.setText(QCoreApplication.translate("MainWindow", u"\u0443\u0434\u0430\u043b\u0438\u0442\u044c", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0435 x1 =", None))
         self.x1ResultLabel.setText(QCoreApplication.translate("MainWindow", u"x1ResultLabel", None))
         self.x2TextLabel.setText(QCoreApplication.translate("MainWindow", u"\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0435 x2 = ", None))
@@ -597,12 +586,21 @@ class Ui_MainWindow(object):
         self.photoIntegralFormula3.setText(QCoreApplication.translate("MainWindow", u"photoIntegralFormula3", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"\u0418\u043d\u0442\u0435\u0433\u0440\u0430\u043b\u044c\u043d\u0430\u044f \u0442\u0435\u043e\u0440\u0435\u043c\u0430 \u041c\u0443\u0430\u0432\u0440\u0430-\u041b\u0430\u043f\u043b\u0430\u0441\u0430", None))
         self.calculateBernuliBtn.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0430\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
-        self.bernuliParamsLabel.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b (p, n, m, m1, m2)", None))
+        self.bernuliParamsLabel.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b (p, n, m1, m2)", None))
         self.choiceTypeLabel.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u043e\u0440 \u0441\u043e\u0431\u044b\u0442\u0438\u044f:", None))
-        self.bernuliFirstType.setText(QCoreApplication.translate("MainWindow", u"k=m", None))
-        self.bernuliSecondType.setText(QCoreApplication.translate("MainWindow", u"k<m", None))
-        self.bernuliThirdType.setText(QCoreApplication.translate("MainWindow", u"k>=m", None))
-        self.bernuliFourthType.setText(QCoreApplication.translate("MainWindow", u"m1<=k<=m2", None))
+
+        __sortingEnabled = self.bernuliFormulaType.isSortingEnabled()
+        self.bernuliFormulaType.setSortingEnabled(False)
+        ___qlistwidgetitem = self.bernuliFormulaType.item(0)
+        ___qlistwidgetitem.setText(QCoreApplication.translate("MainWindow", u"k = m1", None));
+        ___qlistwidgetitem1 = self.bernuliFormulaType.item(1)
+        ___qlistwidgetitem1.setText(QCoreApplication.translate("MainWindow", u"k<m1", None));
+        ___qlistwidgetitem2 = self.bernuliFormulaType.item(2)
+        ___qlistwidgetitem2.setText(QCoreApplication.translate("MainWindow", u"k >=m1", None));
+        ___qlistwidgetitem3 = self.bernuliFormulaType.item(3)
+        ___qlistwidgetitem3.setText(QCoreApplication.translate("MainWindow", u"m1<=k<=m2", None));
+        self.bernuliFormulaType.setSortingEnabled(__sortingEnabled)
+
         self.photoBernuliFirstFormulaType1.setText(QCoreApplication.translate("MainWindow", u"photoBernuliFormulaType1", None))
         self.photoBernuliFormulaType2.setText(QCoreApplication.translate("MainWindow", u"photoBernuliFormulaType2", None))
         self.photoBernuliFormulaType3.setText(QCoreApplication.translate("MainWindow", u"photoBernuliFormulaType3", None))

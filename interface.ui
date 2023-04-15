@@ -90,113 +90,6 @@ QLabel{
          </property>
          <widget class="QWidget" name="polynomPage">
           <layout class="QGridLayout" name="gridLayout_5">
-           <item row="3" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <item>
-              <widget class="QLabel" name="kParamLabel">
-               <property name="text">
-                <string>Параметр k:</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="kParamLine"/>
-             </item>
-            </layout>
-           </item>
-           <item row="6" column="0">
-            <widget class="QLabel" name="photoPolynomFormula">
-             <property name="text">
-              <string>photoPolynomFormula</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout">
-             <item>
-              <widget class="QLabel" name="nParamLabel">
-               <property name="text">
-                <string>Параметр n:</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="nParamLine"/>
-             </item>
-            </layout>
-           </item>
-           <item row="8" column="0">
-            <widget class="QPushButton" name="calculatePolynomBtn">
-             <property name="minimumSize">
-              <size>
-               <width>150</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>Расчитать</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <spacer name="verticalSpacer_6">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::Minimum</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="4" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_3">
-             <item>
-              <widget class="QLabel" name="mParamsLabel">
-               <property name="text">
-                <string>Перечисление m:</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="mParamsLine"/>
-             </item>
-            </layout>
-           </item>
-           <item row="5" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_4">
-             <item>
-              <widget class="QLabel" name="pParamsLabel">
-               <property name="text">
-                <string>Вероятности p:</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="pParamsLine"/>
-             </item>
-            </layout>
-           </item>
            <item row="7" column="0">
             <layout class="QVBoxLayout" name="verticalLayout_7">
              <item>
@@ -234,6 +127,67 @@ QLabel{
              </item>
             </layout>
            </item>
+           <item row="4" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QLabel" name="mParamsLabel">
+               <property name="text">
+                <string>Перечисление m:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="mParamsLine"/>
+             </item>
+            </layout>
+           </item>
+           <item row="5" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QLabel" name="pParamsLabel">
+               <property name="text">
+                <string>Вероятности p:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="pParamsLine"/>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QLabel" name="nParamLabel">
+               <property name="text">
+                <string>Параметр n:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="nParamLine"/>
+             </item>
+            </layout>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="photoPolynomFormula">
+             <property name="text">
+              <string>photoPolynomFormula</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
            <item row="0" column="0">
             <widget class="QLabel" name="polynomLabel">
              <property name="text">
@@ -244,6 +198,52 @@ QLabel{
              </property>
             </widget>
            </item>
+           <item row="8" column="0">
+            <widget class="QPushButton" name="calculatePolynomBtn">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Расчитать</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <spacer name="verticalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Minimum</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="3" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QLabel" name="kParamLabel">
+               <property name="text">
+                <string>удалить</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="kParamLine"/>
+             </item>
+            </layout>
+           </item>
           </layout>
          </widget>
          <widget class="QWidget" name="integralPage">
@@ -253,7 +253,7 @@ QLabel{
              <item>
               <widget class="QLabel" name="nNumberLabel">
                <property name="text">
-                <string>Кол-во испытаний n:</string>
+                <string>Параметры (p, n, m1, m2)</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -270,7 +270,7 @@ QLabel{
              <item>
               <widget class="QLabel" name="rangeLabel">
                <property name="text">
-                <string>Диапозон (m1, m2):</string>
+                <string>удалить</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -287,7 +287,7 @@ QLabel{
              <item>
               <widget class="QLabel" name="probablityLabel">
                <property name="text">
-                <string>Вероятность p:</string>
+                <string>удалить</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -535,7 +535,7 @@ QLabel{
                <item>
                 <widget class="QLabel" name="bernuliParamsLabel">
                  <property name="text">
-                  <string>Параметры (p, n, m, m1, m2)</string>
+                  <string>Параметры (p, n, m1, m2)</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignCenter</set>
@@ -559,31 +559,27 @@ QLabel{
                <item>
                 <layout class="QVBoxLayout" name="verticalLayout_2">
                  <item>
-                  <widget class="QCheckBox" name="bernuliFirstType">
-                   <property name="text">
-                    <string>k=m</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QCheckBox" name="bernuliSecondType">
-                   <property name="text">
-                    <string>k&lt;m</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QCheckBox" name="bernuliThirdType">
-                   <property name="text">
-                    <string>k&gt;=m</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QCheckBox" name="bernuliFourthType">
-                   <property name="text">
-                    <string>m1&lt;=k&lt;=m2</string>
-                   </property>
+                  <widget class="QListWidget" name="bernuliFormulaType">
+                   <item>
+                    <property name="text">
+                     <string>k = m1</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>k&lt;m1</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>k &gt;=m1</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>m1&lt;=k&lt;=m2</string>
+                    </property>
+                   </item>
                   </widget>
                  </item>
                 </layout>
