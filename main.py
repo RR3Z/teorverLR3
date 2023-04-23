@@ -5,7 +5,7 @@ from mainwindow import Ui_MainWindow
 from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QMessageBox, QListWidgetItem
 from PySide6.QtCore import Slot, Signal
 from calculatingFunctions import bernulli, bernulliPolynom, muavLaplasLib, FormulaType
-
+from qpixmapCreator import mathTex_to_QPixmap
 class calculatingType:
     bernuli = 0
     polynom = 1
@@ -16,6 +16,9 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        
+        qpixmap = mathTex_to_QPixmap(r"$\frac{-b\pm\sqrt{b^2-4ac}}{2a}$", 20)
+        self.ui.photoBernuliFirstFormulaType1.setPixmap(qpixmap)
         
         #Соединяем сигнал кнопки bernuliBtn со слотом setPages с параметром 1
         self.ui.bernuliBtn.clicked.connect(lambda: self.setPages(2))
