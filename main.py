@@ -110,8 +110,12 @@ class MainWindow(QMainWindow):
                 elif m1 < 0:
                     result = "Введено неверное значение, m1 должно быть больше 0"
                 else:
-                    result = muavLaplasLib(n,m1, m2, p)
-                    result = round(result, 5)
+                    resultArray = muavLaplasLib(n,m1, m2, p)
+                    result = round(resultArray[0], 5)
+                    x1 = resultArray[1]
+                    x2 = resultArray[2]
+                    self.ui.x1ResultLabel.setText(str(round(x1, 5)))
+                    self.ui.x2ResultLabel.setText(str(round(x2, 5)))
                 
             self.ui.integralAnswerLine.setText(str(result))
         

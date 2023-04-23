@@ -57,9 +57,9 @@ def muavLaplasLib(n : int, m1 : int, m2 : int, p : float):
     #Напиши реализацию
     arg1 = (m2 - n * p) / math.sqrt(n * p * (1 - p))
     arg2 = (m1 - n * p) / math.sqrt(n * p * (1 - p))
-    arg1 = round(arg1, 5)
-    arg2 = round(arg2, 5)
-    return laplace(arg1) - laplace(arg2)
+    arg1 = round(arg1, 20)
+    arg2 = round(arg2, 20)
+    return [laplace(arg1) - laplace(arg2), arg2, arg1]
 
 
 def simpson_rule(f, a, b, n):
