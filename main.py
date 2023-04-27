@@ -17,8 +17,29 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         
-        qpixmap = mathTex_to_QPixmap(r"$\frac{-b\pm\sqrt{b^2-4ac}}{2a}$", 20)
+        #Как записывается формула: r"$Твоя формула$"
+        qpixmap = mathTex_to_QPixmap(r"$P_{n} (m) = C^{m}_{n}*p^{m}*q^{n-m} $", 20)
         self.ui.photoBernuliFirstFormulaType1.setPixmap(qpixmap)
+        
+        qpixmap2 = mathTex_to_QPixmap(r"$P_n(m_1,m_2,...,m_k)=\frac{n!}{m_1!m_2!...m_k!}p_1^{m_1}*p_2^{m_2}*...*p_k^{m_k}$", 20)
+        self.ui.photoPolynomFormula.setPixmap(qpixmap2)
+        
+        integralMuavrLaplasFi = mathTex_to_QPixmap(r"$Ф(x) = \int_{-\infty}^{x} \frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt$", 20)
+        self.ui.photoIntegralFormula1.setPixmap(integralMuavrLaplasFi)
+        
+        integralMuavrLaplas = mathTex_to_QPixmap(r"$P_n(m_1<=X<=m_2) \approx Ф(x_{2})-Ф(x_{1})$", 20)
+        self.ui.photoIntegralFormula2.setPixmap(integralMuavrLaplas)
+        
+        xi = mathTex_to_QPixmap(r"$x_i=\frac{m_i-np}{\sqrt{npq}}$", 20)
+        self.ui.photoIntegralFormula3.setPixmap(xi)
+        
+        description = "р – вероятность появления события при каждом испытании \n q - вероятность не появления события при каждом испытании \n n - общее число испытаний \n m1 и m2 – границы числа появлений события в этой серии"
+        self.ui.description.setText(description)
+        
+        self.ui.bernuliDescription.setText(description)
+        
+        polynomDescription = "p1, p2, …, pk – вероятности появления события при каждом испытании \n n – общее число испытаний \n m1, m2, …, mk – число появлений события в этой серии"
+        self.ui.polynomDescription.setText(polynomDescription)
         
         #Соединяем сигнал кнопки bernuliBtn со слотом setPages с параметром 1
         self.ui.bernuliBtn.clicked.connect(lambda: self.setPages(2))
@@ -30,8 +51,6 @@ class MainWindow(QMainWindow):
         self.ui.calculateBernuliBtn.clicked.connect(lambda: self.calculate(calculatingType.bernuli))
         self.ui.calculatePolynomBtn.clicked.connect(lambda: self.calculate(calculatingType.polynom))
         self.ui.calculateIntegralBtn.clicked.connect(lambda: self.calculate(calculatingType.integral))
-
-      
 
     @Slot()
     def setPages(self, pageIndex):
